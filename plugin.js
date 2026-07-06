@@ -483,7 +483,7 @@ export default function register(api) {
     if (api.registerRpc) {
         api.registerRpc("camofox.health", async () => {
             try {
-                const health = await fetchApi(baseUrl, "/health");
+                const health = (await fetchApi(baseUrl, "/health"));
                 return { status: "ok", ...health };
             }
             catch (err) {
